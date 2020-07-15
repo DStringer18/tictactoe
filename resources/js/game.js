@@ -1,3 +1,5 @@
+//credit: https://github.com/annaelizabeth2019/tictactoetwo
+
 
 /*------ constants ------*/ 
 const winningCombos = [
