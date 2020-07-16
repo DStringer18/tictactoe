@@ -25,6 +25,7 @@ let oScore = 0;
 let winner;
 
 
+
 /*------ cached element references ------*/
 
 const squares = Array.from(document.querySelectorAll('#board div'));
@@ -34,7 +35,17 @@ document.getElementById('board').addEventListener('click', handleTurn)
 const messages = document.querySelector('h2');
 document.getElementById('reset-button').addEventListener('click', init);
 
+
 /*------ functions ------*/
+function chooseTurn() {
+  if (document.getElementById('x').checked) {
+    turn = 'X';
+  } else if (document.getElementById('o').checked) {
+    turn = 'O';
+  }
+  init();
+};
+
 function getWinner() {
   let winner = null;
   winningCombos.forEach(function(combo, index) {
