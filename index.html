@@ -4,20 +4,17 @@
   <head>
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="resources/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>Tic-Tac-Toe</header>
-    <div id="scoreContainer">
-    <h3>Score:</h3>
-    <div class="score">
-      <span>X:</span><span id="xScore">0</span>
+    <div id="player-swap">
+      <label>Who goes first?</label>
+      <input type="radio" id="x" name="firstPlayer" value="x" onclick="chooseTurn()">X</input>
+      <input type="radio" id="o" name="firstPlayer" value="o" onclick="chooseTurn()">O</input>
     </div>
-    <div class="score">
-      <span>O:</span><span id="oScore">0</span>
     </div>
-
-  </div>
-    <h2><i>It's X's Turn!</i></h2>
+      <h2><i>It's X's Turn!</i></h2>
       <div class="game-board" id="board">
         <div class="grid-item" id="A1"></div>
         <div class="grid-item" id="A2"></div>
@@ -29,6 +26,14 @@
         <div class="grid-item" id="C2"></div>
         <div class="grid-item" id="C3"></div>
       </div>
+      <div id="scoreContainer">
+        <h3>Score:</h3>
+        <div class="score">
+          <span>X:</span><span id="xScore">0</span>
+        </div>
+        <div class="score">
+          <span>O:</span><span id="oScore">0</span>
+        </div>
       <button id="reset-button">reset</button>
     <script defer src="resources/js/game.js"></script>
   </body>
