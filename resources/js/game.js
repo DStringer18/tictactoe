@@ -34,7 +34,7 @@ const squares = Array.from(document.querySelectorAll('#board div'));
 
 /*------ event listeners ------*/
 const messages = document.querySelector('h2');
-document.getElementById('reset-button').addEventListener('click', init);
+document.getElementById('reset-button').addEventListener('click', chooseTurn);
 
 
 /*------ functions ------*/
