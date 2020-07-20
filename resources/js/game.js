@@ -100,8 +100,9 @@ function getWinner() {
         winner = turn;
         removeListener();
         updateScore(winner);
-      }
-      if (moveCount === 9) winner = 'T';
+      } else if (moveCount === 9) {
+        winner = 'T'
+      };
     });}
   //problem here vvvv need to id squares inner html
   return winner ? winner : squares.every((index) => {[index].innerText !== ''}) ? 'T' : null;
@@ -123,7 +124,10 @@ function updateScore(winner) {
     xScore++;
   } else if (winner === 'O') {
     oScore++;
+  } else if (winner === 'T') {
+    return;
   }
+  console.log('winner:', winner);
   xScoreDisplay.innerText = xScore;
   oScoreDisplay.innerText = oScore;
 }
