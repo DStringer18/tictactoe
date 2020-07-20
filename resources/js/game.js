@@ -16,7 +16,7 @@ const winningCombos = [
 /*------ app's state ------*/
 
 
-let win = false;
+let win = null;
 let turn = 'X';
 let moveCount = 0;
 let xScoreDisplay = document.getElementById('xScore');
@@ -48,7 +48,7 @@ function init() {
     q.innerText = "";
     q.addEventListener("click", handleTurn);
   })
-  win = false;
+  win = null;
   moveCount = 0;
   render();
 };
@@ -92,11 +92,12 @@ function check(winIndex) {
 
 function getWinner() {
   let winner = null;
-  //this takes the winning combinations
+  /*this takes the winning combinations and checks the current board against them to see if a win has occurred.
+  if one has, then all square clicking is disabled the score is updated and the message is updated at the top;
+  if */
   if (moveCount >= 5){
     winningCombos.forEach((w) => {
       if (check(w)) {
-        win = true;
         winner = turn;
         removeListener();
         updateScore(winner);
@@ -104,7 +105,6 @@ function getWinner() {
         winner = 'T'
       };
     });}
-  //problem here vvvv need to id squares inner html
   return winner ? winner : squares.every((index) => {[index].innerText !== ''}) ? 'T' : null;
   }
 
@@ -116,6 +116,7 @@ const removeListener = () => {
 
 
 function render() {
+  console.log(win);
   messages.textContent = win === 'T' ? `That's a tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
 };
 
