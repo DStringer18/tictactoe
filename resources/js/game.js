@@ -101,7 +101,7 @@ function getWinner() {
         winner = turn;
         removeListener();
         updateScore(winner);
-      } else if (moveCount === 9) {
+      } else if (moveCount === 9 && winner === null) {
         winner = 'T'
       };
     });}
